@@ -220,7 +220,8 @@ public final class MavenArtifact implements Serializable {
      * Called from within Maven to archive an artifact in Hudson.
      */
     public void archive(MavenBuildProxy build, File file, BuildListener listener) throws IOException, InterruptedException {
-        if (build.isArchivingDisabled()) {
+        //ignore waste disk space.
+        if (true || build.isArchivingDisabled()) {
             LOGGER.fine("Archiving disabled - not archiving " + file);
         }
         else {
